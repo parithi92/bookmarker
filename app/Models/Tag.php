@@ -17,4 +17,12 @@ class Tag extends Model
     ];
  
     public $timestamps = false;
+
+    public function bookmarks(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            related: Bookmark::class,
+            table: 'bookmark_tag',
+        );
+    }
 }

@@ -26,4 +26,12 @@ class Bookmark extends Model
             foreignkey: 'user_id',
         );
     }
+
+    public function tags(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            related: Tag::class,
+            table: 'bookmark_table',
+        );
+    }
 }
